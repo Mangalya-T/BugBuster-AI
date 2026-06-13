@@ -1,7 +1,7 @@
 ## 🎥 Project Demo
 
 ### Full Application Demo
-https://github.com/user-attachments/assets/
+https://github.com/Mangalya-T/BugBuster-AI/blob/main/demo/BugBuster-AI%20(1).mp4
 
 ## Run Locally
 

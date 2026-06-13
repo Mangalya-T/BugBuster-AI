@@ -1,4 +1,7 @@
+## 🎥 Project Demo
 
+### Full Application Demo
+https://github.com/user-attachments/assets/
 
 ## Run Locally
 
@@ -14,3 +17,19 @@
 # BugBuster-AI
 BugBuster AI – Detect, analyze, and fix bugs intelligently using AI with multi-language support, static code analysis, automated bug fixing, and detailed reporting.
 
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
+
+# BugBuster-AI
+
+BugBuster AI – Detect, analyze, and fix bugs intelligently using AI with multi-language support, static code analysis, automated bug fixing, and detailed reporting.
+
+## ✨ Features
+
+- AI-powered bug detection
+- Static code analysis
+- Automated bug fixing
+- Multi-language support
+- Quality score generation
+- Detailed bug reports

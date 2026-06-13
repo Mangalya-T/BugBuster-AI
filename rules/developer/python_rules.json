@@ -1,0 +1,97 @@
+[
+  {
+    "id": "py-missing-colon",
+    "name": "Missing Colon",
+    "description": "Detects missing colons at the end of function or class definitions.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "^(?![ \\t]*#)[ \\t]*(def|class|if|elif|else|for|while|with|try|except|finally)\\b((?!:).)*$",
+    "message": "Missing colon ':' at the end of the statement.",
+    "suggestion": "Add a colon ':' at the end of the line to complete the block definition."
+  },
+  {
+    "id": "py-indentation-mixed",
+    "name": "Mixed Tabs and Spaces",
+    "description": "Detects mixed usage of tabs and spaces for indentation.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "^[ ]*\\t|^\\t+[ ]+",
+    "message": "Mixed tabs and spaces detected in indentation.",
+    "suggestion": "Use either only spaces (preferred) or only tabs for indentation throughout the file."
+  },
+  {
+    "id": "py-unclosed-string",
+    "name": "Unclosed String Literal",
+    "description": "Detects string literals that are not properly closed.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "^[^\\n'\"]*(?:(?:(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*(?<!\\\\)\"|(?<!\\\\)'(?:[^'\\\\\\n]|\\\\.)*(?<!\\\\)')[^\\n'\"]*)*(?:(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*|(?<!\\\\)'(?:[^'\\\\\\n]|\\\\.)*)$",
+    "message": "Unclosed string literal detected.",
+    "suggestion": "Ensure all string literals are closed with the matching quote character."
+  },
+  {
+    "id": "py-naming-convention",
+    "name": "Naming Convention Violation",
+    "description": "Detects function names that do not follow snake_case.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "pattern": "def\\s+[a-z]+[A-Z]\\w*",
+    "message": "Function name uses camelCase. Python standard is snake_case.",
+    "suggestion": "Rename the function to use snake_case (e.g., 'my_function' instead of 'myFunction')."
+  },
+  {
+    "id": "py-too-many-params",
+    "name": "Too Many Parameters",
+    "description": "Detects functions with more than 5 parameters.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "pattern": "def\\s+\\w+\\(([^,]+,){5,}[^,]+\\)",
+    "message": "Function has too many parameters (more than 5).",
+    "suggestion": "Consider grouping parameters into a single object or dictionary to improve readability."
+  },
+  {
+    "id": "py-missing-docstring",
+    "name": "Missing Docstring",
+    "description": "Detects functions or classes without docstrings.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "pattern": "(def|class)\\s+\\w+.*:\\s*(?!\\s*['\"]{3})",
+    "message": "Missing documentation string (docstring).",
+    "suggestion": "Add a triple-quoted string immediately after the definition to document its purpose."
+  },
+  {
+    "id": "py-empty-except",
+    "name": "Empty Except Block",
+    "description": "Detects except blocks that only contain 'pass'.",
+    "type": "exception_handling",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "pattern": "except.*:\\s*pass",
+    "message": "Empty except block detected.",
+    "suggestion": "Avoid catching exceptions without any handling logic. At least log the error."
+  },
+  {
+    "id": "py-unused-import",
+    "name": "Unused Import",
+    "description": "Detects imports that are not used in the code.",
+    "type": "unused_variable",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "message": "Imported module or name is not used.",
+    "suggestion": "Remove the unused import to keep the code clean and reduce overhead."
+  }
+]

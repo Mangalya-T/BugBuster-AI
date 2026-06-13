@@ -1,0 +1,38 @@
+[
+  {
+    "id": "java-sql-injection",
+    "name": "SQL Injection Risk",
+    "description": "Detects unsafe string concatenation in SQL queries.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "java",
+    "pattern": "executeQuery\\s*\\(\\s*\"[^\"]*\"\\s*\\+\\s*\\w+\\s*\\)",
+    "message": "Unsafe SQL query concatenation detected. Risk of SQL injection.",
+    "suggestion": "Use PreparedStatement with placeholders (?) instead of string concatenation."
+  },
+  {
+    "id": "java-weak-encryption",
+    "name": "Weak Encryption",
+    "description": "Detects use of weak algorithms like MD5 or DES.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "java",
+    "pattern": "getInstance\\s*\\(\\s*\"(MD5|DES)\"\\s*\\)",
+    "message": "Weak encryption algorithm detected.",
+    "suggestion": "Use stronger algorithms like SHA-256 or AES."
+  },
+  {
+    "id": "java-nested-loops",
+    "name": "Nested Loops Performance",
+    "description": "Detects deeply nested loops (3 or more).",
+    "type": "performance",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "pattern": "for.*\\{.*for.*\\{.*for.*\\{",
+    "message": "Deeply nested loops detected. Potential performance issue.",
+    "suggestion": "Consider refactoring to reduce nesting or use more efficient data structures."
+  }
+]

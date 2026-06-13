@@ -1,0 +1,50 @@
+[
+  {
+    "id": "js-xss-risk",
+    "name": "XSS Risk",
+    "description": "Detects use of innerHTML.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "javascript",
+    "pattern": "\\.innerHTML\\s*=",
+    "message": "Unsafe use of innerHTML detected. Risk of XSS.",
+    "suggestion": "Use 'textContent' or 'innerText' instead of 'innerHTML' to prevent cross-site scripting."
+  },
+  {
+    "id": "js-unsafe-eval",
+    "name": "Unsafe Eval Usage",
+    "description": "Detects unsafe use of eval().",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "javascript",
+    "pattern": "\\beval\\s*\\(",
+    "message": "Unsafe function 'eval' detected. Risk of arbitrary code execution.",
+    "suggestion": "Avoid using 'eval'. Use safer alternatives like 'JSON.parse'."
+  },
+  {
+    "id": "js-hardcoded-secret",
+    "name": "Hardcoded Secret",
+    "description": "Detects hardcoded API keys or secrets.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "javascript",
+    "pattern": "(apiKey|secret|token)\\s*:\\s*['\"][^'\"]+['\"]",
+    "message": "Potential hardcoded API key or secret detected.",
+    "suggestion": "Use environment variables or a secret manager to store sensitive information."
+  },
+  {
+    "id": "js-nested-loops",
+    "name": "Nested Loops Performance",
+    "description": "Detects deeply nested loops (3 or more).",
+    "type": "performance",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "pattern": "for.*\\{.*for.*\\{.*for.*\\{",
+    "message": "Deeply nested loops detected. Potential performance issue.",
+    "suggestion": "Consider refactoring to reduce nesting or use more efficient data structures."
+  }
+]

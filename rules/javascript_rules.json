@@ -1,0 +1,42 @@
+[
+  {
+    "id": "js-eval",
+    "name": "JavaScript eval()",
+    "description": "Detects use of eval() in JavaScript.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "eval\\(",
+    "message": "Use of 'eval()' detected.",
+    "suggestion": "Avoid using eval() as it is a major security risk and performance bottleneck."
+  },
+  {
+    "id": "js-missing-semicolon",
+    "name": "Missing Semicolon (JS)",
+    "description": "Detects missing semicolons at the end of statements in JavaScript.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "(?<![\\{\\};\\s])\\s*\\n\\s*(?![\\{\\};\\s\\.])",
+    "message": "Potential Syntax Error: Missing semicolon ';'.",
+    "suggestion": "Add a semicolon at the end of the statement for better clarity and to avoid ASI issues."
+  },
+  {
+    "id": "js-assignment-in-condition",
+    "name": "Assignment in Condition",
+    "description": "Detects assignment (=) instead of comparison (==) in if/while conditions.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(if|while)\\s*\\(\\s*([^=]+=[^=]+)\\s*\\)",
+    "message": "Potential Syntax Error: Assignment '=' used in condition.",
+    "suggestion": "Use '==' or '===' for comparison inside the condition."
+  },
+  {
+    "id": "todo-comments",
+    "name": "Unresolved TODOs",
+    "description": "Detects TODO or FIXME comments.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "TODO|FIXME",
+    "message": "Unresolved TODO or FIXME comments found.",
+    "suggestion": "Address the pending task or remove the comment if it's no longer relevant."
+  }
+]

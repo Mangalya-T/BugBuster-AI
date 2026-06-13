@@ -1,0 +1,72 @@
+[
+  {
+    "id": "python-2-print",
+    "name": "Python 2 Print",
+    "description": "Detects Python 2 style print statements.",
+    "type": "compatibility",
+    "severity": "fail",
+    "pattern": "print\\s+[\"']",
+    "message": "Python 2 syntax detected (print statement).",
+    "suggestion": "Use print() function for Python 3 compatibility."
+  },
+  {
+    "id": "python-2-xrange",
+    "name": "Python 2 xrange",
+    "description": "Detects Python 2 xrange function.",
+    "type": "compatibility",
+    "severity": "fail",
+    "pattern": "xrange\\(",
+    "message": "Python 2 'xrange' detected.",
+    "suggestion": "Use 'range' for Python 3 compatibility."
+  },
+  {
+    "id": "python-mutable-defaults",
+    "name": "Mutable Default Arguments",
+    "description": "Detects mutable default arguments in Python functions.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "def\\s+\\w+\\s*\\(.*=\\s*(\\[\\]|\\{\\})\\s*\\):",
+    "message": "Mutable default argument detected.",
+    "suggestion": "Use 'None' as default and initialize inside the function."
+  },
+  {
+    "id": "python-eval",
+    "name": "Python eval/exec",
+    "description": "Detects use of eval() or exec() in Python.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(eval|exec)\\(",
+    "message": "Use of 'eval()' or 'exec()' detected.",
+    "suggestion": "Avoid using eval/exec as they are major security risks. Use safer alternatives like ast.literal_eval if necessary."
+  },
+  {
+    "id": "python-broad-exception",
+    "name": "Broad Exception",
+    "description": "Detects broad exception clauses.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "except\\s*(Exception)?:",
+    "message": "Broad exception clause detected.",
+    "suggestion": "Catch specific exceptions instead of a general Exception."
+  },
+  {
+    "id": "python-missing-colon",
+    "name": "Missing Colon",
+    "description": "Detects missing colons at the end of control statements.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "^\\s*(def|if|for|while|class|elif|else|try|except|finally)\\b[^#:]*(?:#.*)?$",
+    "message": "Syntax Error: Missing colon ':' at the end of control statement.",
+    "suggestion": "Add a colon ':' at the end of the statement."
+  },
+  {
+    "id": "todo-comments",
+    "name": "Unresolved TODOs",
+    "description": "Detects TODO or FIXME comments.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "TODO|FIXME",
+    "message": "Unresolved TODO or FIXME comments found.",
+    "suggestion": "Address the pending task or remove the comment if it's no longer relevant."
+  }
+]

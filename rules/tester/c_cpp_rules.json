@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c-buffer-overflow",
+    "name": "Buffer Overflow Risk",
+    "description": "Detects unsafe functions like gets().",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "c",
+    "pattern": "\\bgets\\s*\\(",
+    "message": "Unsafe function 'gets' detected. Risk of buffer overflow.",
+    "suggestion": "Use 'fgets' instead of 'gets' to specify buffer size."
+  },
+  {
+    "id": "c-unsafe-scanf",
+    "name": "Unsafe Input Validation",
+    "description": "Detects unsafe scanf usage.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "c",
+    "pattern": "scanf\\s*\\(\\s*\"%s\"",
+    "message": "Unsafe scanf format string '%s' detected.",
+    "suggestion": "Use a width specifier in scanf (e.g., '%19s') or use 'fgets'."
+  },
+  {
+    "id": "c-nested-loops",
+    "name": "Nested Loops Performance",
+    "description": "Detects deeply nested loops (3 or more).",
+    "type": "performance",
+    "enabled": true,
+    "severity": "warning",
+    "language": "c",
+    "pattern": "for.*\\{.*for.*\\{.*for.*\\{",
+    "message": "Deeply nested loops detected. Potential performance issue.",
+    "suggestion": "Consider refactoring to reduce nesting or use more efficient data structures."
+  }
+]

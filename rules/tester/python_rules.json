@@ -1,0 +1,50 @@
+[
+  {
+    "id": "py-sql-injection",
+    "name": "SQL Injection Risk",
+    "description": "Detects unsafe string formatting in SQL queries.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "execute\\s*\\(\\s*f?\"[^\"]*\\{[^}]*\\}[^\"]*\"\\s*\\)",
+    "message": "Unsafe SQL query formatting detected. Risk of SQL injection.",
+    "suggestion": "Use parameterized queries instead of f-strings or string formatting in SQL queries."
+  },
+  {
+    "id": "py-unsafe-eval",
+    "name": "Unsafe Eval Usage",
+    "description": "Detects unsafe use of eval().",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "\\beval\\s*\\(",
+    "message": "Unsafe function 'eval' detected. Risk of arbitrary code execution.",
+    "suggestion": "Avoid using 'eval'. Use 'ast.literal_eval' or safer alternatives."
+  },
+  {
+    "id": "py-hardcoded-password",
+    "name": "Hardcoded Password",
+    "description": "Detects hardcoded passwords in strings.",
+    "type": "security",
+    "enabled": true,
+    "severity": "fail",
+    "language": "python",
+    "pattern": "(password|pwd|secret)\\s*=\\s*['\"][^'\"]+['\"]",
+    "message": "Potential hardcoded password or secret detected.",
+    "suggestion": "Use environment variables or a secret manager to store sensitive information."
+  },
+  {
+    "id": "py-nested-loops",
+    "name": "Nested Loops Performance",
+    "description": "Detects deeply nested loops (3 or more).",
+    "type": "performance",
+    "enabled": true,
+    "severity": "warning",
+    "language": "python",
+    "pattern": "for.*:\\n\\s+for.*:\\n\\s+for.*:",
+    "message": "Deeply nested loops detected. Potential performance issue.",
+    "suggestion": "Consider refactoring to reduce nesting or use more efficient data structures."
+  }
+]

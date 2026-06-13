@@ -1,0 +1,5 @@
+{
+  "name": "BugBuster AI",
+  "description": "A modular, intelligent tool for static code analysis, structural validation, and automated test case generation using Gemini AI.",
+  "requestFramePermissions": []
+}

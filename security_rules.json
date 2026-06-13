@@ -1,0 +1,30 @@
+[
+  {
+    "rule_id": "SEC001",
+    "rule_name": "SQL Injection Risk",
+    "pattern": "SELECT.*WHERE.*=.*'\\s*\\+\\s*\\w+",
+    "severity": "High",
+    "suggestion": "use prepared statements to prevent SQL injection"
+  },
+  {
+    "rule_id": "SEC002",
+    "rule_name": "Hardcoded Password",
+    "pattern": "password\\s*=\\s*\"[^\"]+\"",
+    "severity": "High",
+    "suggestion": "store passwords in environment variables or a secure vault"
+  },
+  {
+    "rule_id": "SEC003",
+    "rule_name": "Unsafe Input",
+    "pattern": "(input\\(|scanf\\(|request\\.get\\()",
+    "severity": "Medium",
+    "suggestion": "sanitize and validate all user inputs"
+  },
+  {
+    "rule_id": "SEC004",
+    "rule_name": "Weak Encryption",
+    "pattern": "(md5|sha1)\\(",
+    "severity": "Medium",
+    "suggestion": "use stronger hashing algorithms like bcrypt or sha256"
+  }
+]

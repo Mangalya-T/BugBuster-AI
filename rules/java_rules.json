@@ -1,0 +1,62 @@
+[
+  {
+    "id": "java-naming",
+    "name": "Java Naming Convention",
+    "description": "Checks if Java class names start with an uppercase letter.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "class\\s+([a-z]\\w*)",
+    "message": "Java class name should start with an uppercase letter.",
+    "suggestion": "Rename the class to start with an uppercase letter."
+  },
+  {
+    "id": "java-sysout",
+    "name": "System.out.println",
+    "description": "Detects use of System.out.println in Java.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "System\\.out\\.print",
+    "message": "Consider using a Logger instead of System.out.println.",
+    "suggestion": "Use a logging framework like SLF4J or java.util.logging for production code."
+  },
+  {
+    "id": "java-hardcoded-creds",
+    "name": "Hardcoded Credentials",
+    "description": "Detects potential hardcoded passwords or tokens in Java.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(password|secret|key|token)\\s*=\\s*\".+\"",
+    "message": "Potential hardcoded credential detected.",
+    "suggestion": "Store credentials in environment variables or a secure vault."
+  },
+  {
+    "id": "java-missing-semicolon",
+    "name": "Missing Semicolon (Java)",
+    "description": "Detects missing semicolons at the end of statements in Java.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(?<![\\{\\};\\s@])\\s*\\n\\s*(?![\\{\\};\\s@\\.])",
+    "message": "Potential Syntax Error: Missing semicolon ';'.",
+    "suggestion": "Add a semicolon at the end of the statement."
+  },
+  {
+    "id": "java-assignment-in-condition",
+    "name": "Assignment in Condition",
+    "description": "Detects assignment (=) instead of comparison (==) in if/while conditions.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(if|while)\\s*\\(\\s*([^=]+=[^=]+)\\s*\\)",
+    "message": "Potential Syntax Error: Assignment '=' used in condition.",
+    "suggestion": "Use '==' for comparison inside the condition."
+  },
+  {
+    "id": "todo-comments",
+    "name": "Unresolved TODOs",
+    "description": "Detects TODO or FIXME comments.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "TODO|FIXME",
+    "message": "Unresolved TODO or FIXME comments found.",
+    "suggestion": "Address the pending task or remove the comment if it's no longer relevant."
+  }
+]

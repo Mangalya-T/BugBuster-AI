@@ -1,0 +1,62 @@
+[
+  {
+    "id": "c-unsafe-gets",
+    "name": "Unsafe gets()",
+    "description": "Detects use of unsafe gets() function in C.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "gets\\(",
+    "message": "Unsafe function 'gets()' detected.",
+    "suggestion": "Use 'fgets()' instead for better security."
+  },
+  {
+    "id": "c-unsafe-strcpy",
+    "name": "Unsafe strcpy/strcat",
+    "description": "Detects use of unsafe strcpy() or strcat() in C.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "(strcpy|strcat)\\(",
+    "message": "Function 'strcpy()' or 'strcat()' is risky.",
+    "suggestion": "Consider 'strncpy()' or 'strncat()' for safer string handling."
+  },
+  {
+    "id": "c-missing-semicolon",
+    "name": "Missing Semicolon (C)",
+    "description": "Detects missing semicolons at the end of statements in C.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(?<![\\{\\};\\s#])\\s*\\n\\s*(?![\\{\\};\\s#\\.])",
+    "message": "Potential Syntax Error: Missing semicolon ';'.",
+    "suggestion": "Add a semicolon at the end of the statement."
+  },
+  {
+    "id": "c-assignment-in-condition",
+    "name": "Assignment in Condition",
+    "description": "Detects assignment (=) instead of comparison (==) in if/while conditions.",
+    "type": "syntax",
+    "severity": "fail",
+    "pattern": "(if|while)\\s*\\(\\s*([^=]+=[^=]+)\\s*\\)",
+    "message": "Potential Syntax Error: Assignment '=' used in condition.",
+    "suggestion": "Use '==' for comparison inside the condition."
+  },
+  {
+    "id": "c-memory-management",
+    "name": "Memory Management",
+    "description": "Detects memory allocation 'malloc()' without corresponding 'free()'.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "malloc\\(",
+    "message": "Memory allocation 'malloc()' detected.",
+    "suggestion": "Ensure every malloc() has a corresponding free() to avoid memory leaks."
+  },
+  {
+    "id": "todo-comments",
+    "name": "Unresolved TODOs",
+    "description": "Detects TODO or FIXME comments.",
+    "type": "syntax",
+    "severity": "warning",
+    "pattern": "TODO|FIXME",
+    "message": "Unresolved TODO or FIXME comments found.",
+    "suggestion": "Address the pending task or remove the comment if it's no longer relevant."
+  }
+]

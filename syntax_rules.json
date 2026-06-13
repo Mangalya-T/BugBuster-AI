@@ -1,0 +1,30 @@
+[
+  {
+    "rule_id": "S001",
+    "rule_name": "Missing Semicolon",
+    "pattern": "(?<![;{}])\\n(?=\\s*\\w)",
+    "severity": "High",
+    "suggestion": "add semicolon at the end of the statement"
+  },
+  {
+    "rule_id": "S002",
+    "rule_name": "Missing Brackets",
+    "pattern": "if\\s*\\([^)]*$",
+    "severity": "High",
+    "suggestion": "add closing bracket ')'"
+  },
+  {
+    "rule_id": "S003",
+    "rule_name": "Wrong Variable Declaration",
+    "pattern": "int\\s+\\w+\\s*=\\s*\"[^\"]*\"",
+    "severity": "High",
+    "suggestion": "use String for text values or int for numeric values"
+  },
+  {
+    "rule_id": "S004",
+    "rule_name": "Unreachable Code",
+    "pattern": "return.*;\\n\\s*\\w+",
+    "severity": "Medium",
+    "suggestion": "remove code after return statement"
+  }
+]

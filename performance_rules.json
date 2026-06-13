@@ -1,0 +1,23 @@
+[
+  {
+    "rule_id": "PERF001",
+    "rule_name": "Infinite Loop",
+    "pattern": "while\\s*\\(true\\)|for\\s*\\(\\s*;\\s*;\\s*\\)",
+    "severity": "High",
+    "suggestion": "ensure loop termination condition is present and reachable"
+  },
+  {
+    "rule_id": "PERF002",
+    "rule_name": "Deeply Nested Loops",
+    "pattern": "for.*\\{[\\s\\S]*for.*\\{[\\s\\S]*for.*\\{",
+    "severity": "Medium",
+    "suggestion": "reduce loop nesting depth to improve performance and readability"
+  },
+  {
+    "rule_id": "PERF003",
+    "rule_name": "Memory Heavy Operation",
+    "pattern": "(load|read|process)\\s*\\([^)]*\\)\\s*\\*\\s*1000000",
+    "severity": "Medium",
+    "suggestion": "optimize memory usage by processing data in chunks"
+  }
+]

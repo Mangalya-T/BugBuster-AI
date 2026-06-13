@@ -1,0 +1,30 @@
+[
+  {
+    "rule_id": "CS001",
+    "rule_name": "Poor Naming Convention",
+    "pattern": "\\b[a-z][0-9]\\b|\\b[x-z]\\d*\\b",
+    "severity": "Low",
+    "suggestion": "use descriptive names (e.g., totalMarks instead of x1)"
+  },
+  {
+    "rule_id": "CS002",
+    "rule_name": "Very Long Function",
+    "pattern": "(function|def|public|private).*\\{[\\s\\S]{1000,}\\}",
+    "severity": "Medium",
+    "suggestion": "break this function into smaller, more manageable pieces"
+  },
+  {
+    "rule_id": "CS003",
+    "rule_name": "Missing Comment",
+    "pattern": "^(?!.*\\/\\/|.*\\/\\*|.*#).*function\\s+\\w+|^ (?!.*\\/\\/|.*\\/\\*|.*#).*def\\s+\\w+",
+    "severity": "Low",
+    "suggestion": "add a documentation comment to explain the function's purpose"
+  },
+  {
+    "rule_id": "CS004",
+    "rule_name": "Missing Exception Handling",
+    "pattern": "FileReader\\s+\\w+\\s*=\\s*new\\s+FileReader",
+    "severity": "Medium",
+    "suggestion": "wrap file operations in a try-catch block"
+  }
+]

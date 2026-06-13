@@ -1,0 +1,73 @@
+[
+  {
+    "id": "js-missing-semicolon",
+    "name": "Missing Semicolon",
+    "description": "Detects missing semicolons at the end of statements.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "pattern": "(?<![;{}\\s])\\n\\s*(?!#|\\/\\/|\\/\\*|\\s|\\}|\\{)\\w+",
+    "message": "Possible missing semicolon at the end of the line.",
+    "suggestion": "Add a semicolon ';' at the end of the statement."
+  },
+  {
+    "id": "js-unclosed-string",
+    "name": "Unclosed String Literal",
+    "description": "Detects string literals that are not properly closed.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "javascript",
+    "pattern": "^[^\\n'\"]*(?:(?:(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*(?<!\\\\)\"|(?<!\\\\)'(?:[^'\\\\\\n]|\\\\.)*(?<!\\\\)')[^\\n'\"]*)*(?:(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*|(?<!\\\\)'(?:[^'\\\\\\n]|\\\\.)*)$",
+    "message": "Unclosed string literal detected.",
+    "suggestion": "Ensure all string literals are closed with the matching quote character."
+  },
+  {
+    "id": "js-naming-convention",
+    "name": "Naming Convention Violation",
+    "description": "Detects non-camelCase function names.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "pattern": "function\\s+[A-Z]\\w*",
+    "message": "Function name starts with an uppercase letter. JavaScript standard is camelCase.",
+    "suggestion": "Rename the function to use camelCase (e.g., 'myFunction' instead of 'MyFunction')."
+  },
+  {
+    "id": "js-too-many-params",
+    "name": "Too Many Parameters",
+    "description": "Detects functions with more than 5 parameters.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "pattern": "function\\s+\\w+\\(([^,]+,){5,}[^,]+\\)",
+    "message": "Function has too many parameters (more than 5).",
+    "suggestion": "Consider grouping parameters into a single object to improve readability."
+  },
+  {
+    "id": "js-console-log",
+    "name": "Console Log Check",
+    "description": "Detects console.log statements in production code.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "pattern": "console\\.log\\s*\\(",
+    "message": "Found console.log statement.",
+    "suggestion": "Remove console.log statements before deploying to production."
+  },
+  {
+    "id": "js-unused-variable",
+    "name": "Unused Variable",
+    "description": "Detects variables that are declared but not used.",
+    "type": "unused_variable",
+    "enabled": true,
+    "severity": "warning",
+    "language": "javascript",
+    "message": "Variable declared but not used.",
+    "suggestion": "Remove the unused variable to clean up the code."
+  }
+]

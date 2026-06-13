@@ -1,0 +1,96 @@
+[
+  {
+    "id": "java-missing-semicolon",
+    "name": "Missing Semicolon",
+    "description": "Detects missing semicolons at the end of statements.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "java",
+    "pattern": "(?<![;{}\\s])\\n\\s*(?!#|\\/\\/|\\/\\*|\\s|\\}|\\{)\\w+",
+    "message": "Possible missing semicolon at the end of the line.",
+    "suggestion": "Add a semicolon ';' at the end of the statement."
+  },
+  {
+    "id": "java-unclosed-string",
+    "name": "Unclosed String Literal",
+    "description": "Detects string literals that are not properly closed.",
+    "type": "syntax",
+    "enabled": true,
+    "severity": "fail",
+    "language": "java",
+    "pattern": "^[^\\n\"]*(?:(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*(?<!\\\\)\"[^\\n\"]*)*(?<!\\\\)\"(?:[^\"\\\\\\n]|\\\\.)*$",
+    "message": "Unclosed string literal detected.",
+    "suggestion": "Ensure all string literals are closed with the matching quote character."
+  },
+  {
+    "id": "java-naming-class",
+    "name": "Class Naming Violation",
+    "description": "Detects non-PascalCase class names.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "pattern": "class\\s+[a-z]\\w*",
+    "message": "Class name starts with a lowercase letter. Java standard is PascalCase.",
+    "suggestion": "Rename the class to use PascalCase (e.g., 'MyClass' instead of 'myClass')."
+  },
+  {
+    "id": "java-naming-method",
+    "name": "Method Naming Violation",
+    "description": "Detects non-camelCase method names.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "pattern": "\\w+\\s+[A-Z]\\w*\\s*\\(",
+    "message": "Method name starts with an uppercase letter. Java standard is camelCase.",
+    "suggestion": "Rename the method to use camelCase (e.g., 'myMethod' instead of 'MyMethod')."
+  },
+  {
+    "id": "java-too-many-params",
+    "name": "Too Many Parameters",
+    "description": "Detects methods with more than 5 parameters.",
+    "type": "coding_standard",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "pattern": "\\w+\\s+\\w+\\(([^,]+,){5,}[^,]+\\)",
+    "message": "Method has too many parameters (more than 5).",
+    "suggestion": "Consider grouping parameters into a single object to improve readability."
+  },
+  {
+    "id": "java-empty-catch",
+    "name": "Empty Catch Block",
+    "description": "Detects catch blocks that are empty.",
+    "type": "exception_handling",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "pattern": "catch\\s*\\([^)]*\\)\\s*\\{\\s*\\}",
+    "message": "Empty catch block detected.",
+    "suggestion": "Avoid catching exceptions without any handling logic. At least log the error."
+  },
+  {
+    "id": "java-missing-try-catch",
+    "name": "Missing Exception Handling",
+    "description": "Detects I/O operations without try-catch blocks.",
+    "type": "exception_handling",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "message": "Potential missing error handling for I/O operations.",
+    "suggestion": "Wrap I/O operations in a try-catch block or add a 'throws' clause to the method signature."
+  },
+  {
+    "id": "java-unused-variable",
+    "name": "Unused Variable",
+    "description": "Detects variables that are declared but not used.",
+    "type": "unused_variable",
+    "enabled": true,
+    "severity": "warning",
+    "language": "java",
+    "message": "Variable declared but not used.",
+    "suggestion": "Remove the unused variable to clean up the code."
+  }
+]

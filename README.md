@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/f77d7cf6-cd95-4bc4-b3a7-7120cd81a55e
 
 ## Run Locally
 
@@ -22,4 +13,4 @@ View your app in AI Studio: https://ai.studio/apps/f77d7cf6-cd95-4bc4-b3a7-7120c
 =======
 # BugBuster-AI
 BugBuster AI – Detect, analyze, and fix bugs intelligently using AI with multi-language support, static code analysis, automated bug fixing, and detailed reporting.
->>>>>>> 5ba36ece6fe3632cd6f33e52fa0c6206027a8400
+
